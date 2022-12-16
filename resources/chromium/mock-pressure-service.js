@@ -43,7 +43,7 @@ class MockPressureService {
     this.updatesDelivered_ = 0;
   }
 
-  async bindObserver(observer) {
+  async addClient(observer) {
     if (this.observer_ !== null)
       throw new Error('BindObserver() has already been called');
 
@@ -85,7 +85,7 @@ class MockPressureService {
       this.pressureUpdate_.timestamp = {
         internalValue: BigInt((new Date().getTime() + epochDeltaInMs) * 1000)
       };
-      this.observer_.onUpdate(this.pressureUpdate_);
+      this.observer_.onPressureUpdate(this.pressureUpdate_);
       this.updatesDelivered_++;
     }, timeout);
   }
