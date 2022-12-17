@@ -2,9 +2,13 @@
 <title>Image set radial-gradient rendering</title>
 <link rel="author" title="Noam Rosenthal" href="mailto:noam@webkit.org">
 <link rel="author" title="Traian Captan" href="mailto:tcaptan@chromium.org">
+<link rel="stylesheet" href="../resources/image-set-rendering-style.css" />
 <style>
   #test {
     background-image: radial-gradient(green, lightgreen);
   }
 </style>
-<script src="../resources/image-set-rendering-helper.js"></script>
+<p>
+  Test passes if the image below is green when devicePixelRatio is 1.
+</p>
+<div id="test" class="test"></div>

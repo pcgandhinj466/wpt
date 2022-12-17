@@ -15,7 +15,7 @@ Spec definition:
 If all the values in the image set are of an unsupported type,
 the set should be empty.
 -->
-<script src="resources/image-set-rendering-helper.js"></script>
+<link rel="stylesheet" href="resources/image-set-rendering-style.css" />
 <style>
   #test {
     background-image: url("/images/green.png");
@@ -25,3 +25,7 @@ the set should be empty.
     );
   }
 </style>
+<p>
+  Test passes if the image below is green when devicePixelRatio is 1.
+</p>
+<div id="test" class="test"></div>

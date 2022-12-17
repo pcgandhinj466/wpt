@@ -5,7 +5,7 @@
 <link rel="help" href="https://drafts.csswg.org/css-images-4/#image-set-notation">
 <link rel="match" href="reference/image-set-rendering-ref.html">
 <meta name="assert" content="image-set rendering with type picks first valid match">
-<script src="resources/image-set-rendering-helper.js"></script>
+<link rel="stylesheet" href="resources/image-set-rendering-style.css" />
 <style>
   #test {
     background-image: image-set(
@@ -14,3 +14,7 @@
     );
   }
 </style>
+<p>
+  Test passes if the image below is green when devicePixelRatio is 1.
+</p>
+<div id="test" class="test"></div>

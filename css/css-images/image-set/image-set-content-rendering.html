@@ -7,9 +7,13 @@
 <link rel="help" href="https://drafts.csswg.org/css-content/#content-property">
 <link rel="match"  href="reference/image-set-content-rendering-ref.html">
 <meta name="assert" content="image-set content rendering">
-<script src="resources/image-set-rendering-helper.js"></script>
+<link rel="stylesheet" href="resources/image-set-rendering-style.css" />
 <style>
   #test {
     content: image-set(url("/images/green.png") 1x);
   }
 </style>
+<p>
+  Test passes if the image below is green when devicePixelRatio is 1.
+</p>
+<div id="test" class="test"></div>
