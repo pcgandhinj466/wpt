@@ -31,12 +31,12 @@ pressure_test((t, mockPressureService) => {
     assert_unreached('The observer callback should not be called');
   });
 
-  observer.observe('cpu');
+  const promise = observer.observe('cpu');
   observer.unobserve('cpu');
   mockPressureService.setPressureUpdate('critical');
   mockPressureService.startPlatformCollector(/*sampleRate=*/ 1.0);
 
-  return new Promise(resolve => t.step_timeout(resolve, 1000));
+  return promise_rejects_dom(t, 'NotSupportedError', promise);
 }, 'Removing observer before observe() resolves works');
 
 pressure_test(async (t, mockPressureService) => {
