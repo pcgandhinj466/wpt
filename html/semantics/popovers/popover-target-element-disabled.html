@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<link rel=author href="mailto:jarhar@chromium.org">
+<link rel=help href="https://github.com/whatwg/html/pull/8221#discussion_r1049379113">
+<script src="/resources/testharness.js"></script>
+<script src="/resources/testharnessreport.js"></script>
+
+<div id=outerpopover popover=auto>
+  <button popovertoggletarget=innerpopover disabled>toggle popover</button>
+</div>
+<div id=innerpopover popover=auto>popover</div>
+
+<script>
+test(() => {
+  outerpopover.showPopover();
+  innerpopover.showPopover();
+  assert_true(innerpopover.matches(':open'),
+    'The inner popover should be able to open successfully.');
+  assert_false(outerpopover.matches(':open'),
+    'The outer popover should be closed by opening the inner one.');
+}, 'Disabled popover*target buttons should not affect the popover heirarchy.');
+</script>
