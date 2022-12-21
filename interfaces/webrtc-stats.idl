@@ -137,6 +137,7 @@ dictionary RTCOutboundRtpStreamStats : RTCSentRtpStreamStats {
              DOMString            encoderImplementation;
              boolean              powerEfficientEncoder;
              boolean              active;
+             DOMString            scalabilityMode;
 };
 
 enum RTCQualityLimitationReason {
@@ -180,11 +181,11 @@ dictionary RTCVideoSourceStats : RTCMediaSourceStats {
 };
 
 dictionary RTCAudioPlayoutStats : RTCStats {
-             double        synthesizedSamplesDuration;
-             unsigned long synthesizedSamplesEvents;
-             double        totalSamplesDuration;
-             double        totalPlayoutDelay;
-             double        totalSamplesCount;
+             double             synthesizedSamplesDuration;
+             unsigned long      synthesizedSamplesEvents;
+             double             totalSamplesDuration;
+             double             totalPlayoutDelay;
+             unsigned long long totalSamplesCount;
 };
 
 dictionary RTCPeerConnectionStats : RTCStats {
